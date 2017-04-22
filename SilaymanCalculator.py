@@ -2,7 +2,6 @@
 import sys
 from PyQt5 import QtCore, QtGui, uic, QtWidgets
 from math import *
-import threading
 form_class = uic.loadUiType("SilaymanCalculator.ui")[0]
 class MyWindowClass(QtWidgets.QMainWindow, form_class):
     def __init__(self, parent=None):
@@ -59,7 +58,7 @@ class MyWindowClass(QtWidgets.QMainWindow, form_class):
     def subtraction_button(self):
         self.lineEdit.insert("(-)")
     def division_button(self):
-        self.lineEdit.insert("÷")
+        self.lineEdit.insert("Ã·")
     def percentage_button(self):
         input_text1 = self.lineEdit.text()
         self.lineEdit.clear()
@@ -92,8 +91,8 @@ class MyWindowClass(QtWidgets.QMainWindow, form_class):
             answer1 = float(numerouno) - float(numerodos)
             self.lineEdit.clear()
             self.lineEdit.insert(str(answer1))
-        if "÷" in input_text1:
-            input_text = input_text1.split("÷")
+        if "Ã·" in input_text1:
+            input_text = input_text1.split("Ã·")
             numerouno = (input_text[0])
             numerodos = (input_text[1])
             answer1 = float(numerouno) / float(numerodos)
